@@ -16,63 +16,67 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 body {
-  @apply bg-dark text-white antialiased;
+  @apply bg-dark-bg text-light-primary antialiased;
   font-family: var(--font-inter);
+  letter-spacing: -0.02em;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-dark-light;
+  @apply bg-dark-bg;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary rounded-full;
+  @apply bg-dark-border rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-dark;
+  @apply bg-primary;
 }
 
 /* Selection */
 ::selection {
-  @apply bg-primary text-dark;
+  @apply bg-primary text-white;
 }
 
 /* Custom utilities */
 @layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent;
+  /* Magazine Typography */
+  .section-number {
+    @apply text-[200px] md:text-[300px] font-black leading-none text-magazine-gray-light select-none;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+  }
+
+  .section-title {
+    @apply text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter;
+  }
+
+  .editorial-line {
+    @apply h-px bg-primary;
   }
 
   .section-padding {
-    @apply px-6 md:px-12 lg:px-24 py-20 md:py-32;
+    @apply px-8 md:px-16 lg:px-24 py-24 md:py-40;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
 
-  .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
-  }
-
-  .glass-dark {
-    @apply bg-dark-lighter/50 backdrop-blur-lg border border-white/5;
-  }
-
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-slate-900 font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30;
+    @apply bg-primary hover:bg-primary/80 text-white font-bold px-10 py-4 transition-all duration-300 uppercase tracking-wider text-sm rounded-lg;
   }
 
   .btn-secondary {
-    @apply border-2 border-primary/50 hover:bg-primary/10 text-primary hover:text-primary-light font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105;
+    @apply border-2 border-primary hover:bg-primary text-light-primary hover:text-white font-bold px-10 py-4 transition-all duration-300 uppercase tracking-wider text-sm rounded-lg;
   }
 }
 

@@ -20,7 +20,10 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-gray-400 text-sm"
           >
-            © {new Date().getFullYear()} Victor Trisac. Construido con Next.js y TailwindCSS.
+            © {new Date().getFullYear()} Victor Trisac · AI Product Developer
+            <br className="md:hidden" />
+            <span className="hidden md:inline"> · </span>
+            Construido con Next.js, TailwindCSS y café ☕
           </motion.p>
 
           {/* Social Links */}

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ScrollProgress from '@/components/ScrollProgress'
+import ScrollNav from '@/components/ScrollNav'
 
 export const metadata: Metadata = {
   title: 'Victor Trisac | Full-Stack Developer',
@@ -21,10 +22,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body>
+    <html lang="es" className="scroll-smooth">
+      <body className="overflow-x-hidden">
         <div className="min-h-screen flex flex-col">
-          <Navbar />
+          <ScrollProgress />
+          <ScrollNav />
           <main className="flex-1">
             {children}
           </main>

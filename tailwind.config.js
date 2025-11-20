@@ -8,16 +8,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#5EEAD4', // teal/mint - minimalista
-          dark: '#2DD4BF',    // teal-400
-          light: '#99F6E4',   // teal-200
+        magazine: {
+          cream: '#FFFEF2',    // crema papel (legacy)
+          black: '#0A0A0A',    // negro profundo (legacy)
+          gray: '#6B6B6B',     // gris medio (legacy)
+          'gray-light': '#E5E5E5', // gris claro (legacy)
         },
+        accent: {
+          red: '#DC2626',      // rojo editorial (legacy)
+          gold: '#D4AF37',     // dorado (legacy)
+          navy: '#1E3A8A',     // azul marino (legacy)
+        },
+        // Tokyo Night Theme
         dark: {
-          DEFAULT: '#0F172A', // slate-900 - más suave que negro puro
-          light: '#1E293B',   // slate-800
-          lighter: '#334155', // slate-700
+          bg: '#1A1B26',        // fondo principal Tokyo Night (azul oscuro)
+          surface: '#24283B',   // superficie/cards
+          light: '#414868',     // superficie más clara
+          border: '#414868',    // bordes
         },
+        light: {
+          primary: '#C0CAF5',   // texto principal (azul claro)
+          secondary: '#9AA5CE', // texto secundario
+          tertiary: '#565F89',  // texto terciario
+        },
+        primary: '#BB9AF7',     // Purple (Tokyo Night accent)
+        secondary: '#7AA2F7',   // Blue (Tokyo Night)
+        success: '#9ECE6A',     // Green (Tokyo Night)
+        warning: '#FF9E64',     // Orange (Tokyo Night)
+        info: '#7DCFFF',        // Cyan (Tokyo Night)
+        danger: '#F7768E',      // Red (Tokyo Night)
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
