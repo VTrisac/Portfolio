@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import FadeIn from './FadeIn'
 import SectionHeading from './SectionHeading'
 import { useLang } from '@/lib/i18n'
@@ -10,8 +11,16 @@ export default function ContactSection() {
   const t = dictionary.contact
 
   return (
-    <section id="contacto" className="section-pad border-t border-line">
-      <div className="container-page">
+    <section id="contacto" className="relative section-pad border-t border-line overflow-hidden">
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/art-agents.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-30 [mask-image:linear-gradient(to_bottom,transparent,black_45%)]"
+        />
+      </div>
+      <div className="container-page relative">
         <SectionHeading path="/contacto" title={t.title[lang]} />
 
         <FadeIn from="right">

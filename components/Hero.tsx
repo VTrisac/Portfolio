@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, useReducedMotion } from 'framer-motion'
 import FadeIn from './FadeIn'
 import Terminal from './Terminal'
@@ -14,8 +15,15 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-      {/* fondo: grid de puntos + glow */}
+      {/* fondo: arte generado + grid de puntos + glow */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/art-hero.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-25 [mask-image:linear-gradient(105deg,transparent_30%,black_75%)]"
+        />
         <div className="absolute inset-0 bg-dots [mask-image:radial-gradient(65%_65%_at_38%_40%,black,transparent)]" />
         <div className="absolute -top-48 right-[-12%] w-[620px] h-[620px] rounded-full bg-accent/[0.07] blur-[120px] animate-breathe motion-reduce:animate-none" />
       </div>
