@@ -31,7 +31,7 @@ export const education: Education[] = [
     school: 'ConquerX',
     degree: { es: 'Master Full Stack', en: 'Full Stack Master' },
     years: '2022 — 2025',
-    note: '9,5',
+    note: '8,5',
   },
   {
     school: 'CEPI-BASE',
