@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { LanguageProvider } from '@/lib/i18n'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 const display = Fraunces({
@@ -41,12 +43,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="es" id="top" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body className="overflow-x-hidden">
-        <div className="min-h-screen flex flex-col">
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <LanguageProvider>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   )
