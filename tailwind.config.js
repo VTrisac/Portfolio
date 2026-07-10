@@ -8,17 +8,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        magazine: {
-          cream: '#FFFEF2',    // crema papel (legacy)
-          black: '#0A0A0A',    // negro profundo (legacy)
-          gray: '#6B6B6B',     // gris medio (legacy)
-          'gray-light': '#E5E5E5', // gris claro (legacy)
-        },
-        accent: {
-          red: '#DC2626',      // rojo editorial (legacy)
-          gold: '#D4AF37',     // dorado (legacy)
-          navy: '#1E3A8A',     // azul marino (legacy)
-        },
         // Tokyo Night Theme
         dark: {
           bg: '#1A1B26',        // fondo principal Tokyo Night (azul oscuro)

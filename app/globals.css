@@ -51,7 +51,7 @@ body {
 @layer utilities {
   /* Magazine Typography */
   .section-number {
-    @apply text-[200px] md:text-[300px] font-black leading-none text-magazine-gray-light select-none;
+    @apply text-[200px] md:text-[300px] font-black leading-none text-dark-light select-none;
     font-feature-settings: 'tnum' on, 'lnum' on;
   }
 
