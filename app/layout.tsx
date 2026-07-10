@@ -1,18 +1,37 @@
 import type { Metadata } from 'next'
+import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/Footer'
-import ScrollProgress from '@/components/ScrollProgress'
-import ScrollNav from '@/components/ScrollNav'
+
+const display = Fraunces({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  axes: ['opsz'],
+  variable: '--font-display',
+})
+
+const sans = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+})
 
 export const metadata: Metadata = {
-  title: 'Victor Trisac | Full-Stack Developer',
-  description: 'Desarrollador Full-Stack especializado en Python, Django, React y automatización con IA. Construyo APIs robustas, chatbots inteligentes y flujos n8n que resuelven problemas reales.',
-  keywords: ['full-stack developer', 'python', 'django', 'react', 'next.js', 'chatbots IA', 'n8n', 'automatización', 'APIs REST', 'FastAPI'],
-  authors: [{ name: 'Victor Trisac' }],
+  metadataBase: new URL('https://victortrisac.netlify.app'),
+  title: 'Víctor Trisac — Full Stack Engineer · Python, FastAPI e IA',
+  description:
+    'Full Stack Engineer especializado en Python, FastAPI y automatización con IA. Desarrollo de sistemas escalables en cloud. Barcelona.',
+  authors: [{ name: 'Víctor Trisac' }],
   openGraph: {
-    title: 'Victor Trisac | Full-Stack Developer',
-    description: 'Desarrollador Full-Stack: Python, Django, React. Chatbots IA y automatización n8n.',
+    title: 'Víctor Trisac — Full Stack Engineer',
+    description:
+      'Python, FastAPI y automatización con IA. Sistemas escalables en cloud.',
     type: 'website',
+    locale: 'es_ES',
   },
 }
 
@@ -22,14 +41,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="es" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body className="overflow-x-hidden">
         <div className="min-h-screen flex flex-col">
-          <ScrollProgress />
-          <ScrollNav />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>

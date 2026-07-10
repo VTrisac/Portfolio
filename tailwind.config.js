@@ -8,46 +8,37 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Tokyo Night Theme
+        ink: '#0C0C0E',      // fondo principal
+        surface: '#141416',  // cards / paneles
+        line: '#26262B',     // bordes hairline
+        cream: '#E9E6E0',    // texto principal
+        muted: '#8B8880',    // texto secundario
+        accent: '#C4694A',   // terracota — único acento
+
+        // Tokyo Night (transitorio: lo usan los componentes antiguos, se purga al final del rediseño)
         dark: {
-          bg: '#1A1B26',        // fondo principal Tokyo Night (azul oscuro)
-          surface: '#24283B',   // superficie/cards
-          light: '#414868',     // superficie más clara
-          border: '#414868',    // bordes
+          bg: '#1A1B26',
+          surface: '#24283B',
+          light: '#414868',
+          border: '#414868',
         },
         light: {
-          primary: '#C0CAF5',   // texto principal (azul claro)
-          secondary: '#9AA5CE', // texto secundario
-          tertiary: '#565F89',  // texto terciario
+          primary: '#C0CAF5',
+          secondary: '#9AA5CE',
+          tertiary: '#565F89',
         },
-        primary: '#BB9AF7',     // Purple (Tokyo Night accent)
-        secondary: '#7AA2F7',   // Blue (Tokyo Night)
-        success: '#9ECE6A',     // Green (Tokyo Night)
-        warning: '#FF9E64',     // Orange (Tokyo Night)
-        info: '#7DCFFF',        // Cyan (Tokyo Night)
-        danger: '#F7768E',      // Red (Tokyo Night)
+        primary: '#BB9AF7',
+        secondary: '#7AA2F7',
+        warning: '#FF9E64',
+        info: '#7DCFFF',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-display)', 'Georgia', 'serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
-      animation: {
-        'fade-in': 'fadeIn 0.6s ease-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'float': 'float 3s ease-in-out infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
+      fontSize: {
+        display: ['clamp(2.5rem, 6vw, 4.25rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
       },
     },
   },
