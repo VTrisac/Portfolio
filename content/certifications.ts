@@ -31,6 +31,7 @@ export const education: Education[] = [
     school: 'ConquerX',
     degree: { es: 'Master Full Stack', en: 'Full Stack Master' },
     years: '2022 — 2025',
+    note: '9,5',
   },
   {
     school: 'CEPI-BASE',
@@ -40,13 +41,5 @@ export const education: Education[] = [
     },
     years: '2020 — 2022',
     note: '9,5',
-  },
-  {
-    school: 'CEPI-BASE',
-    degree: {
-      es: 'Programación de aplicaciones con Python',
-      en: 'Python Application Programming',
-    },
-    years: '2020 — 2022',
   },
 ]
