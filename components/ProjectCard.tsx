@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useLang } from '@/lib/i18n'
 import { dictionary } from '@/content/dictionary'
@@ -48,6 +49,15 @@ export default function ProjectCard({ project }: { project: Project }) {
             className="overflow-hidden"
           >
             <div className="pb-10 md:pl-[232px] max-w-3xl space-y-6">
+              <div className="relative h-40 md:h-48 rounded-lg overflow-hidden border border-line">
+                <Image
+                  src={project.art}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  className="object-cover"
+                />
+              </div>
               <div>
                 <h4 className="font-mono text-xs tracking-widest text-accent mb-2">
                   {t.problem[lang].toUpperCase()}

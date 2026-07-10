@@ -2,6 +2,7 @@ import type { Localized } from './types'
 
 export type Project = {
   id: string
+  art: string
   company: string
   year: string
   title: Localized
@@ -16,6 +17,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 'weai-agentes',
+    art: '/projects/weai.jpg',
     company: 'WeAi',
     year: '2026',
     title: {
@@ -42,6 +44,7 @@ export const projects: Project[] = [
   },
   {
     id: 'easo-automatizacion',
+    art: '/projects/easo.jpg',
     company: 'EASO MAGNO',
     year: '2025',
     title: {
@@ -68,6 +71,7 @@ export const projects: Project[] = [
   },
   {
     id: 'kauai-recomendacion',
+    art: '/projects/kauai.jpg',
     company: 'kauai.es',
     year: '2025',
     title: {
@@ -94,6 +98,7 @@ export const projects: Project[] = [
   },
   {
     id: 'proaltus-wallet',
+    art: '/projects/proaltus.jpg',
     company: 'Proaltus Capital Partners',
     year: '2024',
     title: {
@@ -120,6 +125,7 @@ export const projects: Project[] = [
   },
   {
     id: 'sole-erp',
+    art: '/projects/sole.jpg',
     company: 'Solé Diesel',
     year: '2023',
     title: {
@@ -146,6 +152,7 @@ export const projects: Project[] = [
   },
   {
     id: 'majestic-herramientas',
+    art: '/projects/majestic.jpg',
     company: 'Majestic Hotel Group',
     year: '2022–2023',
     title: {
