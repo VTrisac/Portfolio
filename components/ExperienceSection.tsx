@@ -1,5 +1,7 @@
 'use client'
 
+import { useRef } from 'react'
+import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion'
 import FadeIn from './FadeIn'
 import SectionHeading from './SectionHeading'
 import { useLang } from '@/lib/i18n'
@@ -9,17 +11,30 @@ import { experience } from '@/content/experience'
 export default function ExperienceSection() {
   const { lang } = useLang()
   const t = dictionary.experience
+  const reduce = useReducedMotion()
+  const listRef = useRef<HTMLOListElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: listRef,
+    offset: ['start 0.8', 'end 0.5'],
+  })
+  const scaleY = useSpring(scrollYProgress, { stiffness: 60, damping: 20 })
 
   return (
     <section id="experiencia" className="section-pad border-t border-line">
       <div className="container-page">
         <SectionHeading path="/experiencia" title={t.title[lang]} />
 
-        <ol className="divide-y divide-line">
+        <ol ref={listRef} className="relative divide-y divide-line border-l border-line pl-6 md:pl-10">
+          {/* línea que se dibuja con el scroll */}
+          <motion.span
+            aria-hidden="true"
+            style={{ scaleY: reduce ? 1 : scaleY }}
+            className="absolute left-[-1px] top-0 bottom-0 w-px bg-accent origin-top"
+          />
           {experience.map((role, i) => (
             <li key={`${role.company}-${role.start}`}>
               <FadeIn delay={Math.min(i * 0.05, 0.2)}>
-                <div className="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-8">
+                <div className="grid md:grid-cols-[180px_1fr] gap-2 md:gap-8 py-8">
                   <p className="font-mono text-xs text-muted pt-1">
                     {role.start} — {role.end ?? t.present[lang]}
                   </p>

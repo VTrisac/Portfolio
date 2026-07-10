@@ -23,6 +23,17 @@ module.exports = {
       fontSize: {
         display: ['clamp(2.5rem, 6vw, 4.25rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
       },
+      animation: {
+        blink: 'blink 1.1s steps(1) infinite',
+        breathe: 'breathe 9s ease-in-out infinite',
+      },
+      keyframes: {
+        blink: { '50%': { opacity: '0' } },
+        breathe: {
+          '0%, 100%': { opacity: '0.55', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.06)' },
+        },
+      },
     },
   },
   plugins: [],

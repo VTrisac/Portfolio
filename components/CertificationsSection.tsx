@@ -2,6 +2,7 @@
 
 import FadeIn from './FadeIn'
 import SectionHeading from './SectionHeading'
+import SpotlightCard from './SpotlightCard'
 import { useLang } from '@/lib/i18n'
 import { dictionary } from '@/content/dictionary'
 import { certifications, education, verifyUrl } from '@/content/certifications'
@@ -18,19 +19,21 @@ export default function CertificationsSection() {
         <FadeIn>
           <ul className="grid md:grid-cols-2 gap-px bg-line border border-line">
             {certifications.map((cert) => (
-              <li key={cert.credentialId} className="bg-ink p-6 hover:bg-surface transition-colors">
-                <h3 className="text-sm text-cream">{cert.name}</h3>
-                <p className="mt-2 font-mono text-xs text-muted">
-                  Anthropic · {t.issued[lang]} · {cert.credentialId}
-                </p>
-                <a
-                  href={verifyUrl(cert.credentialId)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-block font-mono text-xs text-accent hover:text-cream transition-colors"
-                >
-                  {t.verify[lang]} ↗
-                </a>
+              <li key={cert.credentialId}>
+                <SpotlightCard className="bg-ink p-6 h-full">
+                  <h3 className="text-sm text-cream">{cert.name}</h3>
+                  <p className="mt-2 font-mono text-xs text-muted">
+                    Anthropic · {t.issued[lang]} · {cert.credentialId}
+                  </p>
+                  <a
+                    href={verifyUrl(cert.credentialId)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative mt-3 inline-block font-mono text-xs text-accent hover:text-cream transition-colors"
+                  >
+                    {t.verify[lang]} ↗
+                  </a>
+                </SpotlightCard>
               </li>
             ))}
           </ul>

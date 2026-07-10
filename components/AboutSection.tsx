@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import FadeIn from './FadeIn'
 import SectionHeading from './SectionHeading'
+import Stat from './Stat'
 import { useLang } from '@/lib/i18n'
 import { dictionary } from '@/content/dictionary'
 import { skills } from '@/content/skills'
@@ -35,6 +36,13 @@ export default function AboutSection() {
             ))}
           </FadeIn>
         </div>
+
+        <FadeIn delay={0.1} className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-line py-10">
+          <Stat n={4} suffix="+" label={lang === 'es' ? 'años de experiencia' : 'years of experience'} />
+          <Stat n={8} label={lang === 'es' ? 'posiciones' : 'roles'} />
+          <Stat n={6} label={lang === 'es' ? 'casos de estudio' : 'case studies'} />
+          <Stat n={10} label={lang === 'es' ? 'certificaciones' : 'certifications'} />
+        </FadeIn>
 
         <FadeIn delay={0.15} className="mt-16 md:mt-20">
           <h3 className="font-mono text-xs tracking-widest text-accent mb-6">

@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="w-full text-left py-8 group"
+        className="w-full text-left py-8 px-3 -mx-3 group hover:bg-surface/40 transition-colors duration-300"
       >
         <div className="grid md:grid-cols-[200px_1fr_auto] gap-2 md:gap-8 items-baseline">
           <p className="font-mono text-xs text-muted">
