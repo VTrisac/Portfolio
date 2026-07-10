@@ -26,7 +26,7 @@ export default function SpotlightCard({
         className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
           background:
-            'radial-gradient(220px circle at var(--sx, 50%) var(--sy, 50%), rgba(196,105,74,0.12), transparent 65%)',
+            'radial-gradient(220px circle at var(--sx, 50%) var(--sy, 50%), rgba(163,81,57,0.16), transparent 65%)',
         }}
       />
       {children}

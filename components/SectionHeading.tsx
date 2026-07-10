@@ -12,7 +12,7 @@ export default function SectionHeading({
   sub?: string
 }) {
   return (
-    <FadeIn className="mb-14 md:mb-20">
+    <FadeIn from="left" className="mb-14 md:mb-20">
       <p className="font-mono text-xs tracking-widest text-accent mb-4" aria-hidden="true">
         GET {path}
       </p>

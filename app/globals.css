@@ -43,7 +43,7 @@
   }
 
   .bg-dots {
-    background-image: radial-gradient(rgba(233, 230, 224, 0.07) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(201, 193, 177, 0.07) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 }

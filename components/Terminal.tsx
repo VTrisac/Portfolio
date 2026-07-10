@@ -64,7 +64,7 @@ export default function Terminal() {
   return (
     <div
       aria-hidden="true"
-      className="rounded-lg border border-line bg-surface/80 shadow-[0_0_80px_-20px_rgba(196,105,74,0.25)] overflow-hidden"
+      className="rounded-lg border border-line bg-surface/80 shadow-[0_0_80px_-20px_rgba(163,81,57,0.3)] overflow-hidden"
     >
       <div className="flex items-center gap-2 px-4 py-3 border-b border-line">
         <span className="w-2.5 h-2.5 rounded-full bg-line" />

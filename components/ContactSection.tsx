@@ -14,13 +14,13 @@ export default function ContactSection() {
       <div className="container-page">
         <SectionHeading path="/contacto" title={t.title[lang]} />
 
-        <FadeIn>
+        <FadeIn from="right">
           <p className="font-serif text-3xl md:text-4xl max-w-2xl leading-snug">
             {t.text[lang]}
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0.1} from="left">
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <a
               href="mailto:Victorperez694@gmail.com"

@@ -16,7 +16,7 @@ export default function CertificationsSection() {
       <div className="container-page">
         <SectionHeading path="/certificaciones" title={t.title[lang]} sub={t.sub[lang]} />
 
-        <FadeIn>
+        <FadeIn from="right">
           <ul className="grid md:grid-cols-2 gap-px bg-line border border-line">
             {certifications.map((cert) => (
               <li key={cert.credentialId}>
@@ -39,7 +39,7 @@ export default function CertificationsSection() {
           </ul>
         </FadeIn>
 
-        <FadeIn delay={0.1} className="mt-16">
+        <FadeIn delay={0.1} from="left" className="mt-16">
           <h3 className="font-mono text-xs tracking-widest text-accent mb-6">
             {t.educationTitle[lang].toUpperCase()}
           </h3>

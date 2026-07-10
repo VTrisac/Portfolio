@@ -16,13 +16,13 @@ export default function ProjectsSection() {
       <div className="container-page">
         <SectionHeading path="/proyectos" title={t.title[lang]} sub={t.sub[lang]} />
 
-        <FadeIn>
-          <div className="divide-y divide-line border-y border-line">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </FadeIn>
+        <div className="divide-y divide-line border-y border-line">
+          {projects.map((project, i) => (
+            <FadeIn key={project.id} from={i % 2 === 0 ? 'left' : 'right'}>
+              <ProjectCard project={project} />
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   )

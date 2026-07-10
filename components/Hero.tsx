@@ -28,11 +28,15 @@ export default function Hero() {
             </p>
           </FadeIn>
 
-          <h1 key={lang} className="font-serif text-display max-w-3xl flex flex-wrap gap-x-[0.28em]">
+          <h1
+            key={lang}
+            aria-label={t.headline[lang]}
+            className="font-serif text-display max-w-3xl flex flex-wrap gap-x-[0.28em]"
+          >
             {words.map((word, i) => {
               const highlight = word.startsWith('solos') || word.startsWith('themselves')
               return (
-                <span key={i} className="inline-block overflow-hidden py-[0.1em] -my-[0.1em]">
+                <span key={i} aria-hidden="true" className="inline-block overflow-hidden py-[0.1em] -my-[0.1em]">
                   <motion.span
                     className={`inline-block ${highlight ? 'italic text-accent' : ''}`}
                     initial={reduce ? false : { y: '110%' }}
@@ -74,7 +78,7 @@ export default function Hero() {
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.5}>
+        <FadeIn delay={0.5} from="right">
           <Terminal />
         </FadeIn>
       </div>

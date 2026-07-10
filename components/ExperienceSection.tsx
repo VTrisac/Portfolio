@@ -33,7 +33,7 @@ export default function ExperienceSection() {
           />
           {experience.map((role, i) => (
             <li key={`${role.company}-${role.start}`}>
-              <FadeIn delay={Math.min(i * 0.05, 0.2)}>
+              <FadeIn from="left" delay={Math.min(i * 0.05, 0.2)}>
                 <div className="grid md:grid-cols-[180px_1fr] gap-2 md:gap-8 py-8">
                   <p className="font-mono text-xs text-muted pt-1">
                     {role.start} — {role.end ?? t.present[lang]}

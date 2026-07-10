@@ -18,7 +18,7 @@ export default function AboutSection() {
         <SectionHeading path="/sobre-mi" title={t.title[lang]} />
 
         <div className="grid md:grid-cols-[200px_1fr] gap-10 md:gap-16 items-start">
-          <FadeIn>
+          <FadeIn from="left">
             <Image
               src="/profile.jpg"
               alt="Víctor Trisac"
@@ -28,7 +28,7 @@ export default function AboutSection() {
             />
           </FadeIn>
 
-          <FadeIn delay={0.1} className="space-y-5 text-muted leading-relaxed max-w-2xl">
+          <FadeIn delay={0.1} from="right" className="space-y-5 text-muted leading-relaxed max-w-2xl">
             {t.bio[lang].map((p, i) => (
               <p key={i} className={i === t.bio[lang].length - 1 ? 'text-cream' : undefined}>
                 {p}

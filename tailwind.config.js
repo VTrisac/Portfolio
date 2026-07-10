@@ -11,9 +11,9 @@ module.exports = {
         ink: '#0C0C0E',      // fondo principal
         surface: '#141416',  // cards / paneles
         line: '#26262B',     // bordes hairline
-        cream: '#E9E6E0',    // texto principal
-        muted: '#8B8880',    // texto secundario
-        accent: '#C4694A',   // terracota — único acento
+        cream: '#C9C1B1',    // texto principal — Oatmeal
+        muted: '#8A8375',    // texto secundario — Oatmeal atenuado
+        accent: '#A35139',   // Truffle Trouble — único acento
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

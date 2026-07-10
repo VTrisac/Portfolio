@@ -17,11 +17,11 @@ export default function OpenGraphImage() {
           justifyContent: 'space-between',
           padding: 80,
           backgroundColor: '#0C0C0E',
-          color: '#E9E6E0',
+          color: '#C9C1B1',
           fontFamily: 'Georgia, serif',
         }}
       >
-        <div style={{ display: 'flex', fontSize: 28, color: '#C4694A', fontFamily: 'monospace' }}>
+        <div style={{ display: 'flex', fontSize: 28, color: '#A35139', fontFamily: 'monospace' }}>
           GET /victor-trisac
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
             style={{
               display: 'flex',
               fontSize: 34,
-              color: '#8B8880',
+              color: '#8A8375',
               marginTop: 24,
               fontFamily: 'sans-serif',
             }}
