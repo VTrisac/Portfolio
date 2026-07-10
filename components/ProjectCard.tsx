@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useLang } from '@/lib/i18n'
 import { dictionary } from '@/content/dictionary'
@@ -12,6 +11,12 @@ export default function ProjectCard({ project }: { project: Project }) {
   const t = dictionary.projects
   const [open, setOpen] = useState(false)
   const reduce = useReducedMotion()
+
+  const blocks = [
+    { label: t.problem[lang], text: project.problem[lang] },
+    { label: t.solution[lang], text: project.solution[lang] },
+    { label: t.result[lang], text: project.result[lang] },
+  ]
 
   return (
     <article>
@@ -48,36 +53,46 @@ export default function ProjectCard({ project }: { project: Project }) {
             transition={{ duration: 0.35, ease: 'easeOut' }}
             className="overflow-hidden"
           >
-            <div className="pb-10 md:pl-[232px] max-w-3xl space-y-6">
-              <div className="relative h-40 md:h-48 rounded-lg overflow-hidden border border-line">
-                <Image
-                  src={project.art}
-                  alt=""
-                  fill
-                  sizes="(max-width: 768px) 100vw, 768px"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-mono text-xs tracking-widest text-accent mb-2">
-                  {t.problem[lang].toUpperCase()}
-                </h4>
-                <p className="text-sm text-muted leading-relaxed">{project.problem[lang]}</p>
-              </div>
-              <div>
-                <h4 className="font-mono text-xs tracking-widest text-accent mb-2">
-                  {t.solution[lang].toUpperCase()}
-                </h4>
-                <p className="text-sm text-muted leading-relaxed">{project.solution[lang]}</p>
-              </div>
-              <div>
-                <h4 className="font-mono text-xs tracking-widest text-accent mb-2">
-                  {t.result[lang].toUpperCase()}
-                </h4>
-                <p className="text-sm text-muted leading-relaxed">{project.result[lang]}</p>
-              </div>
-              <p className="font-mono text-xs text-muted/70">{project.stack.join(' · ')}</p>
-            </div>
+            <motion.div
+              className="relative mb-10 md:ml-[232px] max-w-3xl pl-6 md:pl-8 space-y-6"
+              initial={reduce ? false : 'hidden'}
+              animate="show"
+              variants={{ show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } } }}
+            >
+              {/* raíl que se dibuja — mismo lenguaje que el timeline de experiencia */}
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-px bg-line" />
+              <motion.span
+                aria-hidden="true"
+                className="absolute left-0 top-1 bottom-1 w-px bg-accent origin-top"
+                variants={{
+                  hidden: { scaleY: 0 },
+                  show: { scaleY: 1, transition: { duration: 0.8, ease: 'easeOut' } },
+                }}
+              />
+              {blocks.map((block) => (
+                <motion.div
+                  key={block.label}
+                  variants={{
+                    hidden: { opacity: 0, x: -18 },
+                    show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+                  }}
+                >
+                  <h4 className="font-mono text-xs tracking-widest text-accent mb-2">
+                    {block.label.toUpperCase()}
+                  </h4>
+                  <p className="text-sm text-muted leading-relaxed">{block.text}</p>
+                </motion.div>
+              ))}
+              <motion.p
+                className="font-mono text-xs text-muted/70"
+                variants={{
+                  hidden: { opacity: 0, x: -18 },
+                  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+                }}
+              >
+                {project.stack.join(' · ')}
+              </motion.p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
